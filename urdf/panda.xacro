@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="panda_link0">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link0.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link0.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.041018 -0.00014 0.049974"/>
+      <mass value="0.629769"/>
+      <inertia ixx="0.00315" ixy="8.2904E-07" ixz="0.00015" iyy="0.00388" iyz="8.2299E-06" izz="0.004285"/>
+    </inertial>
+  </link>
+
+  <link name="panda_link1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link1.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link1.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0082121602797146209 -0.026532335711888823 -0.047138121275696603"/>
+      <mass value="4.9706751871147938"/>
+      <inertia ixx="0.70141461794089599" ixy="-0.00063981642154032682" ixz="0.0078364148804466946" iyy="0.70480134490761892" iyz="0.01074540620106503" izz="0.010111109106129931"/>
+    </inertial>
+  </link>
+     
+  <link name="panda_link2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link2.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link2.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0088444802449167883 -0.027531520310653038 -0.00055850347148591131"/>
+      <mass value="0.64712411452542207"/>
+      <inertia ixx="0.012028228395010528" ixy="-0.005176957021186453" ixz="0.028416723889140006" iyy="0.034001000715476563" iyz="-0.0034872992153212263" izz="0.026005490424668338"/>
+    </inertial>
+  </link>
+  
+  <link name="panda_link3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link3.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link3.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.028340188017725303 0.037617533422114727 -0.067208806995820797"/>
+      <mass value="3.2283417206016849"/>
+      <inertia ixx="0.035865608781665073" ixy="-0.0048981742215283711" ixz="-0.01683647440270046" iyy="0.041062395573147469" iyz="-0.012957871374295925" izz="0.0072954180594979098"/>
+    </inertial>
+  </link>
+      
+  <link name="panda_link4">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link4.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link4.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.052863658713578371 0.10286796966271235 0.027230575794129856"/>
+      <mass value="3.5877058164189872"/>
+      <inertia ixx="0.023713305935381724" ixy="0.019494904018681623" ixz="-0.00041806758858047981" iyy="0.016777579582937466" iyz="0.0073688153189040975" izz="0.03323445513208665"/>
+    </inertial>
+  </link>
+  
+  <link name="panda_link5">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link5.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link5.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0081910657546574537 0.042932437976240877 -0.03621309770351528"/>
+      <mass value="1.2258764841419181"/>
+      <inertia ixx="0.039833353765046244" ixy="-0.0041636653470603583" ixz="-0.0057791872240629304" iyy="0.027963868212344253" iyz="0.0057981330723796617" izz="0.0058527143406942126"/>
+    </inertial>
+  </link>
+  
+  <link name="panda_link6">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link6.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link6.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.060550072294159214 -0.013508438365027796 -0.014648696562393272"/>
+      <mass value="1.6660195957719575"/>
+      <inertia ixx="0.0018946535529745841" ixy="3.0085693236067733e-05" ixz="-0.0014917301754574759" iyy="0.0059333708668997337" iyz="0.001150006504840946" izz="0.0039230158812056833"/>
+    </inertial>
+  </link>
+  
+  <link name="panda_link7">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link7.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/link7.obj"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0084850731223620312 -0.00063346827849231481 0.061428526086978817"/>
+      <mass value="0.73598318978014388"/>
+      <inertia ixx="0.0096273165930081117" ixy="0.0011836273982315374" ixz="0.0021412918431209403" iyy="0.011335955410605407" iyz="-0.000625294249958001" izz="0.0063944769299665851"/>
+    </inertial>
+  </link>
+  
+  <link name="panda_link8"/>
+  
+  <link name="hand">
+    <inertial>
+      <mass value="0.73" />
+      <origin xyz="0 0.0015244 0.0275912" rpy="0 0 0" />
+      <inertia ixx="0.00278560230025" ixy="0.0" ixz="0.0" iyy="0.000400033405336" iyz="0.0" izz="0.00256378041832" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/hand.obj"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/hand.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="leftfinger">
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0 0.0145644 0.0227941" rpy="0 0 0" />
+      <inertia ixx="3.01220925051e-05" ixy="0.0" ixz="0.0" iyy="2.95873808038e-05" iyz="0.0" izz="6.95125211657e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/finger.obj"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/finger.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="rightfinger">
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0 0.0145644 0.0227941" rpy="0 0 3.1415926535897931" />
+      <inertia ixx="3.01220925051e-05" ixy="0.0" ixz="0.0" iyy="2.95873808038e-05" iyz="0.0" izz="6.95125211657e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 3.1415926535897931"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/finger.obj"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 3.1415926535897931"/>
+      <geometry>
+        <mesh filename="file://$(find gypsy_robot)/meshes/panda_arm/finger.obj"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!--###################### JOINTS ########################-->
+  <joint name="panda_joint1" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <origin rpy="0 0 0" xyz="0 0 0.333"/>
+    <parent link="panda_link0"/>
+    <child link="panda_link1"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="15" effort="87" lower="-2.9671" upper="2.9671" velocity="2.5"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint2" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628"/>
+    <origin rpy="-1.5707963267948966 0 0" xyz="0 0 0"/>
+    <parent link="panda_link1"/>
+    <child link="panda_link2"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="7.5" effort="87" lower="-1.8326" upper="1.8326" velocity="2.5"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint3" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="0 -0.316 0"/>
+    <parent link="panda_link2"/>
+    <child link="panda_link3"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="12.5" effort="87" lower="-2.9671" upper="2.9671" velocity="2.5"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint4" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="0.0825 0 0"/>
+    <parent link="panda_link3"/>
+    <child link="panda_link4"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="12.5" effort="87" lower="-3.1416" upper="-0.4" velocity="2.5"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint5" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <origin rpy="-1.5707963267948966 0 0" xyz="-0.0825 0.384 0"/>
+    <parent link="panda_link4"/>
+    <child link="panda_link5"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="15" effort="12" lower="-2.9671" upper="2.9671" velocity="3"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint6" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+    <parent link="panda_link5"/>
+    <child link="panda_link6"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="20" effort="12" lower="-0.0873" upper="3.8223" velocity="3"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+  
+  <joint name="panda_joint7" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="0.088 0 0"/>
+    <parent link="panda_link6"/>
+    <child link="panda_link7"/>
+    <axis xyz="0 0 1"/>
+    <limit acceleration="20" effort="12" lower="-2.9671" upper="2.9671" velocity="3"/>
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+  </joint>
+
+  <joint name="panda_joint8" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.107"/>
+    <parent link="panda_link7"/>
+    <child link="panda_link8"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <joint name="panda_hand_joint" type="fixed">
+    <parent link="panda_link8"/>
+    <child link="hand"/>
+    <origin rpy="0 0 -0.785398163397" xyz="0 0 -0.05"/>
+  </joint>
+
+  <joint name="finger_joint1" type="prismatic">
+    <parent link="hand"/>
+    <child link="leftfinger"/>
+    <origin xyz="0 0 0.0584" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="-0.001" upper="0.04" velocity="0.3"/>
+  </joint>
+  
+  <joint name="finger_joint2" type="prismatic">
+    <parent link="hand"/>
+    <child link="rightfinger"/>
+    <origin xyz="0 0 0.0584" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="20" lower="-0.001" upper="0.04" velocity="0.3"/>
+  </joint>
+
+</robot>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name="gypsy" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:property name="chassis_color" value="Gazebo/Grey"/>
+    <xacro:property name="bin_red" value="Gazebo/Red"/>
+    <xacro:property name="bin_green" value="Gazebo/Green"/>
+    <xacro:property name="panda_finger" value="Gazebo/Black"/>
+    <xacro:property name="panda_body_color" value="Gazebo/Orange"/>
+    <xacro:property name="wheel_color" value="Gazebo/Black"/>
+    <xacro:property name="camera_color" value="Gazebo/FlatBlack"/>
+
+    <!--########################## MOBILE BOT ################################-->
+
+    <gazebo reference="chassis">
+        <material>${chassis_color}</material>
+    </gazebo>
+
+    <gazebo reference="bin_one">
+        <material>${bin_red}</material>
+    </gazebo>
+
+    <gazebo reference="bin_two">
+        <material>${bin_green}</material>
+    </gazebo>
+
+    <gazebo reference = "left_upper_wheel">
+        <material>${wheel_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "left_bottom_wheel">
+        <material>${wheel_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "right_upper_wheel">
+        <material>${wheel_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "right_botttom_wheel">
+        <material>${wheel_color}</material>
+    </gazebo>
+
+    <gazebo reference = "camera_one">
+        <material>${camera_color}</material>
+    </gazebo>
+
+    <gazebo reference = "camera_two">
+        <material>${camera_color}</material>
+    </gazebo>
+
+    <!--################################# PANDA ARM ########################################-->
+
+    <gazebo reference = "panda_link0">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link1">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link2">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link3">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link4">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link5">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link6">
+        <material>$panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "panda_link7">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "hand">
+        <material>${panda_body_color}</material>
+    </gazebo>
+    
+    <gazebo reference = "leftfinger">
+        <material>${panda_finger}</material>
+    </gazebo>
+    
+    <gazebo reference = "rightfinger">
+        <material>${panda_finger}</material>
+    </gazebo>
+
+</robot>

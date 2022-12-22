@@ -1,0 +1,48 @@
+controller_manager:
+
+  update_rate: 100 
+    
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  grip_controller:
+    type: effort_controller/JointTrajectoryController
+    joints:
+      - finger_joint1
+      - finger_joint2
+    gains:
+      finger_joint1: {p: 100,i: 1,d: 10}
+      finger_joint2: {p: 100,i: 1,d: 10}
+    constraints:
+      goal_time: 3.0
+      finger_joint1:
+        goal: 0.02
+      finger_joint2:
+        goal: 0.02
+
+  panda_link_controller:
+    type: joint_trajectory_controller/JointTrajectoryController
+    ros__parameters:
+      joints:
+        - panda_joint1
+        - panda_joint2
+        - panda_joint3
+        - panda_joint4
+        - panda_joint5
+        - panda_joint6
+        - panda_joint7
+        - panda_joint8
+        - upper_left_wheel_joint
+        - upper_right_wheel_joint
+        - bottom_left_wheel_joint
+        - bottom_right_wheel_joint
+      gains:
+        panda_joint1: {p: 100,i: 1,d: 10}
+        panda_joint2: {p: 100,i: 1,d: 10}
+        panda_joint3: {p: 100,i: 1,d: 10}
+        panda_joint4: {p: 100,i: 1,d: 10}
+        panda_joint5: {p: 100,i: 1,d: 10}
+        panda_joint6: {p: 100,i: 1,d: 10}
+        panda_joint7: {p: 100,i: 1,d: 10}
+        panda_joint8: {p: 100,i: 1,d: 10}

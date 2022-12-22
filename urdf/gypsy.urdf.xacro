@@ -14,6 +14,8 @@
 
     <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/plugin.gazebo"/>
 
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/physics.gazebo"/>
+    <!--########################################################################################-->
     <link name = "base_footprint"></link>
 
     <joint name="base_link_joint" type="fixed">

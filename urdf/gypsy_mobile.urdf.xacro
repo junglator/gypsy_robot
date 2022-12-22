@@ -31,10 +31,11 @@
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <mass value = "30.00"/>
+            <!--calcuated on the basis of dimension-->
             <inertia
-                ixx = "1.66" ixy="0.00" ixz="-0.001"
-                iyy = "0.00" iyz="0.0004555"
-                izz = "3.383"/>
+                ixx = "3.355625" ixy="0.00" ixz="0.00"
+                iyy = "1.40" iyz="0.0004555"   
+                izz = "2.825"/>
         </inertial>
     </link>
 
@@ -116,11 +117,11 @@
             </collision>
             <inertial>
                 <origin xyz = "0 0 0" rpy="0 0 0"/>
-                <mass value = "2.883"/>
+                <mass value = "0.200"/>
                 <inertia
-                    ixx = "0.047" ixy="0.00" ixz="0.00"
-                    iyy = "0.074" iyz="0.0"
-                    izz = "0.051"/>
+                    ixx = "0.004" ixy="0.00" ixz="0.00"
+                    iyy = "0.004" iyz="0.0"
+                    izz = "0.004"/>
             </inertial>
         </link>
     </xacro:macro>

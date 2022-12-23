@@ -1,0 +1,1 @@
+Warehouse/Supermarket mobile manipulator

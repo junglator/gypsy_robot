@@ -2,15 +2,15 @@
   <model name='gypsy'>
     <link name='base_footprint'>
       <inertial>
-        <pose>0.018625 2e-06 0.189807 0 -0 0</pose>
-        <mass>36.4546</mass>
+        <pose>-0.004051 3e-06 0.156806 0 -0 0</pose>
+        <mass>31.0886</mass>
         <inertia>
-          <ixx>1.97374</ixx>
-          <ixy>2.5305e-05</ixy>
-          <ixz>-0.141918</ixz>
-          <iyy>3.89306</iyy>
-          <iyz>-2.08085e-05</iyz>
-          <izz>3.34303</izz>
+          <ixx>1.46608</ixx>
+          <ixy>2.33057e-05</ixy>
+          <ixz>0.0165846</ixz>
+          <iyy>1.88833</iyy>
+          <iyz>-2.37181e-05</iyz>
+          <izz>2.91078</izz>
         </inertia>
       </inertial>
       <collision name='base_footprint_fixed_joint_lump__chassis_collision'>
@@ -43,7 +43,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -70,7 +73,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense_435i.stl</uri>
+            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense.obj</uri>
           </mesh>
         </geometry>
         <surface>
@@ -135,7 +138,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense_435i.stl</uri>
+            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -221,7 +224,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -300,7 +306,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -379,7 +388,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -458,7 +470,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -537,7 +552,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -616,7 +634,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -695,7 +716,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -704,7 +728,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense_435i.stl</uri>
+            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense.obj</uri>
           </mesh>
         </geometry>
         <surface>
@@ -729,7 +753,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -753,7 +780,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense_435i.stl</uri>
+            <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/realsense.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -827,10 +854,16 @@
         </geometry>
         <surface>
           <contact>
-            <ode/>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -894,10 +927,16 @@
         </geometry>
         <surface>
           <contact>
-            <ode/>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -1160,11 +1199,27 @@
     <self_collide>1</self_collide>
     <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
       <robotNamespace>panda</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <controlPeriod>0.001</controlPeriod>
       <legacyModeNS>0</legacyModeNS>
     </plugin>
     <plugin name='joint_state_publisher' filename='libgazebo_ros_joint_state_publisher.so'>
       <jointName>panda_joint0,panda_joint1,panda_joint2,panda_joint3,panda_joint4, panda_joint5,panda_joint6,panda_joint7,finger_joint1,finger_joint1</jointName>
+    </plugin>
+    <plugin name='gazebo_grasp_fix' filename='libgazebo_grasp_fix.so'>
+      <arm>
+        <arm_name>panda</arm_name>
+        <palm_link>hand</palm_link>
+        <gripper_link>leftfinger</gripper_link>
+        <gripper_link>rightfinger</gripper_link>
+      </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+      <update_rate>4</update_rate>
+      <grip_count_threshold>4</grip_count_threshold>
+      <max_grip_count>8</max_grip_count>
+      <release_tolerance>0.003</release_tolerance>
+      <disable_collisions_on_attach>0</disable_collisions_on_attach>
+      <contact_topic>__default_topic__</contact_topic>
     </plugin>
     <plugin name='camera' filename='librealsense_gazebo_plugin.so'>
       <depthUpdateRate>30</depthUpdateRate>

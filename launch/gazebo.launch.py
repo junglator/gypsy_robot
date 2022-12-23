@@ -15,7 +15,7 @@ def generate_launch_description():
   package_name = 'gypsy_robot'
   robot_name_in_model = 'gypsy'
   sdf_model_path = 'models/gypsy.sdf'
-  world_file_path = 'worlds/neighborhood.world'
+  world_file_path = 'worlds/supermarket.sdf'
      
   # Pose where we want to spawn the robot
   spawn_x_val = '0.0'
@@ -51,7 +51,7 @@ def generate_launch_description():
  
   declare_use_namespace_cmd = DeclareLaunchArgument(
     name='use_namespace',
-    default_value='false',
+    default_value='False',
     description='Whether to apply a namespace to the navigation stack')
              
   declare_sdf_model_path_cmd = DeclareLaunchArgument(
@@ -66,7 +66,7 @@ def generate_launch_description():
      
   declare_use_sim_time_cmd = DeclareLaunchArgument(
     name='use_sim_time',
-    default_value='true',
+    default_value='True',
     description='Use simulation (Gazebo) clock if true')
  
   declare_use_simulator_cmd = DeclareLaunchArgument(

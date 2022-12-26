@@ -123,6 +123,12 @@
             <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/bin.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__bin_green_visual_3'>
         <pose>0.15 -0.185 0.381 1.5708 -0 1.5708</pose>
@@ -132,6 +138,12 @@
             <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/bin.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__camera_one_visual_4'>
         <pose>-0.395 0 0.224 -1.5708 0 1.5708</pose>
@@ -1068,6 +1080,12 @@
             <uri>file:///home/junglator/pandora_ws/install/gypsy_robot/share/gypsy_robot/meshes/mobile_bot/Wheel_Right.obj</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='upper_left_wheel_joint' type='revolute'>

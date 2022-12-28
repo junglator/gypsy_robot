@@ -9,7 +9,7 @@ Visualization Manager:
     - Class: rviz_default_plugins/Grid
       Name: Grid
       Value: true
-    - Alpha: 0.8
+    - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Description Source: Topic
       Description Topic:
@@ -19,9 +19,17 @@ Visualization Manager:
       Value: true
     - Class: rviz_default_plugins/TF
       Name: TF
-      Value: true
+      Value: false
+    - Class: rviz_default_plugins/Image
+      Topic: /camera_one_rgb_camera/image_raw
+      Name: Image
+      Enabled: true
+    - Class: rviz_default_plugins/Image
+      Topic: /camera_two_rgb_camera/image_raw
+      Name: Image
+      Enabled: true
   Global Options:
-    Fixed Frame: base_link
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:

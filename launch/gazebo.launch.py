@@ -3,6 +3,8 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     robot_name = 'gypsy_robot'
@@ -20,6 +22,10 @@ def generate_launch_description():
 
     swpan_args = '{name: \"gypsy\", xml: \"' + xml + '\" }'
 
+    # Open the URDF file
+    with open(urdf, 'r') as infp:
+        robot_desc = infp.read()
+
     return LaunchDescription([
         ExecuteProcess(
             cmd=['gazebo', '--verbose', world,
@@ -35,4 +41,9 @@ def generate_launch_description():
             cmd=['ros2', 'service', 'call', '/spawn_entity',
                  'gazebo_msgs/SpawnEntity', swpan_args],
             output='screen'),
+
+        Node(package='robot_state_publisher',executable='robot_state_publisher',
+            name='robot_state_publisher',output='screen',
+            parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
+            arguments=[urdf])
     ])

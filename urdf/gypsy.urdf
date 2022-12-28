@@ -349,7 +349,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="30.00"/>
       <!--calcuated on the basis of dimension-->
-      <inertia ixx="1.7755" ixy="0.00" ixz="0.00" iyy="1.400" iyz="0.00" izz="2.825"/>
+      <inertia ixx="1.7755" ixy="0.00" ixz="0.00" iyy="1.40" iyz="0.00" izz="2.825"/>
     </inertial>
   </link>
   <link name="left_upper_wheel">
@@ -936,119 +936,69 @@
       <pose>0 0 0 0 0 0</pose>
     </sensor>
   </gazebo>
-  <!--################### DEPTH CAMERA PLUGIN (Realsense D435i) ##################-->
-  <gazebo reference="camera_one_color_frame">
-    <sensor name="camera1" type="camera">
-      <update_rate>30</update_rate>
-      <camera name="__deafult__">
-        <horizontal_fov>1.047198</horizontal_fov>
+  <!--################### DEPTH CAMERA PLUGIN ##################-->
+  <gazebo reference="camera_one">
+    <sensor name="camera_one_rgb_camera" type="camera">
+      <update_rate>10.0</update_rate>
+      <camera name="cam_one_rgb_camera">
+        <pose>0 0 0 0 0 0</pose>
+        <horizontal_fov>1.3962634</horizontal_fov>
         <image>
           <width>640</width>
           <height>480</height>
-          <format>RGB_INT8</format>
+          <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.1</near>
-          <far>100</far>
+          <near>0.005</near>
+          <far>10.0</far>
         </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
       </camera>
-      <always_on>1</always_on>
-      <visualize>0</visualize>
-    </sensor>
-  </gazebo>
-  <gazebo reference="camera_one_infra_frame">
-    <sensor name="ir1" type="camera">
-      <update_rate>30</update_rate>
-      <camera name="__deafult__">
-        <horizontal_fov>1.047198</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>L_INT8</format>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>100</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <always_on>1</always_on>
-      <visualize>0</visualize>
-    </sensor>
-  </gazebo>
-  <gazebo reference="camera_one_depth_frame">
-    <sensor name="depth" type="depth">
-      <update_rate>30</update_rate>
-      <camera name="__deafult__">
-        <horizontal_fov>1.047198</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>100</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <always_on>1</always_on>
-      <visualize>0</visualize>
-    </sensor>
-  </gazebo>
-  <gazebo>
-    <plugin filename="librealsense_gazebo_plugin.so" name="camera">
-      <depthUpdateRate>30</depthUpdateRate>
-      <colorUpdateRate>30</colorUpdateRate>
-      <infraredUpdateRate>30</infraredUpdateRate>
-      <depthTopicName>depth/image_raw</depthTopicName>
-      <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
-      <colorTopicName>color/image_raw</colorTopicName>
-      <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
-      <infrared1TopicName>infrared/image_raw</infrared1TopicName>
-      <infrared1CameraInfoTopicName>infrared/camera_info</infrared1CameraInfoTopicName>
-      <infrared2TopicName>infrared2/image_raw</infrared2TopicName>
-      <infrared2CameraInfoTopicName>infrared2/camera_info</infrared2CameraInfoTopicName>
-      <colorOpticalframeName>camera_color_optical_frame</colorOpticalframeName>
-      <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
-      <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
-      <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
-      <rangeMinDepth>0.1</rangeMinDepth>
-      <rangeMaxDepth>10</rangeMaxDepth>
-      <pointCloud>1</pointCloud>
-      <pointCloudTopicName>depth/color/points</pointCloudTopicName>
-      <pointCloudCutoff>0.15</pointCloudCutoff>
-      <pointCloudCutoffMax>10</pointCloudCutoffMax>
-    </plugin>
-  </gazebo>
-  <gazebo reference="camera_one_gyro_frame">
-    <gravity>true</gravity>
-    <sensor name="imu_sensor" type="imu">
-      <always_on>true</always_on>
-      <visualize>false</visualize>
-      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>camera/imu/data</topicName>
-        <bodyName>camera_gyro_frame</bodyName>
-        <updateRateHZ>50.0</updateRateHZ>
-        <gaussianNoise>0.001</gaussianNoise>
-        <xyzOffset>0 0 0</xyzOffset>
-        <rpyOffset>0 0 0</rpyOffset>
-        <frameName>camera_gyro_frame</frameName>
-        <initialOrientationAsReference>false</initialOrientationAsReference>
+      <plugin filename="libgazebo_ros_camera.so" name="camera_one_controller">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rgb_camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>cam_one_rgb_cam_camera_link_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
       </plugin>
-      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="camera_two">
+    <sensor name="camera_two_rgb_camera" type="camera">
+      <update_rate>10.0</update_rate>
+      <camera name="camera_two_rgb_camera">
+        <pose>0 0 0 0 0 0</pose>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.005</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_ros_camera.so" name="camera_two_controller">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rgb_camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>cam_one_rgb_cam_camera_link_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
     </sensor>
   </gazebo>
   <!--################################## MECANUM WHEEL ###############################-->

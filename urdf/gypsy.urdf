@@ -590,75 +590,6 @@
     <child link="laser_link"/>
     <origin rpy="1.57 -1.57 0" xyz="0 0 0"/>
   </joint>
-  <ros2_control name="MecanumWheelSystem" type="system">
-    <hardware>
-      <plugin>gazebo_ros2_control/MecanumWheelSystem</plugin>
-    </hardware>
-    <joint name="upper_left_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <param name="motor_id">1</param>
-    </joint>
-    <joint name="bottom_left_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <param name="motor_id">2</param>
-    </joint>
-    <joint name="upper_right_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <param name="motor_id">3</param>
-    </joint>
-    <joint name="bottom_right_wheel_joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-      <param name="motor_id">4</param>
-    </joint>
-  </ros2_control>
-  <transmission name="front_left_wheel_trans" type="SimpleTransmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="front_left_wheel_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="upper_left_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
-  <transmission name="front_right_wheel_trans" type="SimpleTransmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="front_right_wheel_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="bottom_left_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
-  <transmission name="rear_left_wheel_trans" type="SimpleTransmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="rear_left_wheel_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="upper_right_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
-  <transmission name="rear_right_wheel_trans" type="SimpleTransmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="rear_right_wheel_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="bottom_right_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
   <gazebo reference="panda_joint1">
     <!-- Needed for ODE to output external wrenches on joints -->
     <provideFeedback>true</provideFeedback>
@@ -871,10 +802,10 @@
   <gazebo reference="chassis">
     <material>Gazebo/Grey</material>
   </gazebo>
-  <gazebo reference="bin_one">
+  <gazebo reference="bin_red">
     <material>Gazebo/Red</material>
   </gazebo>
-  <gazebo reference="bin_two">
+  <gazebo reference="bin_green">
     <material>Gazebo/Green</material>
   </gazebo>
   <gazebo reference="left_upper_wheel">
@@ -886,7 +817,7 @@
   <gazebo reference="right_upper_wheel">
     <material>Gazebo/Black</material>
   </gazebo>
-  <gazebo reference="right_botttom_wheel">
+  <gazebo reference="right_bottom_wheel">
     <material>Gazebo/Black</material>
   </gazebo>
   <gazebo reference="camera_one">
@@ -1018,7 +949,7 @@
   <!--################### LASER PLUGIN ##################-->
   <gazebo reference="laser_link">
     <sensor name="laser_scanner" type="ray">
-      <pose>0 0 0 0 1.57 0</pose>
+      <pose>0 0 0 0 -1.57 1.57</pose>
       <ray>
         <scan>
           <horizontal>

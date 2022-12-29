@@ -7,8 +7,6 @@
     <xacro:include filename="$(find gypsy_robot)/urdf/panda.xacro"/>
     
     <xacro:include filename="$(find gypsy_robot)/urdf/gypsy_mobile.urdf.xacro"/>
-
-    <xacro:include filename="$(find gypsy_robot)/urdf/control.xacro"/>
     
     <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/panda.gazebo"/>
 

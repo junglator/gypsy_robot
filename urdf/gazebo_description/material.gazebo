@@ -2,8 +2,8 @@
 <robot name="gypsy" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
     <xacro:property name="chassis_color" value="Gazebo/Grey"/>
-    <xacro:property name="bin_red" value="Gazebo/Red"/>
-    <xacro:property name="bin_green" value="Gazebo/Green"/>
+    <xacro:property name="bin_one" value="Gazebo/Red"/>
+    <xacro:property name="bin_two" value="Gazebo/Green"/>
     <xacro:property name="panda_finger" value="Gazebo/Black"/>
     <xacro:property name="panda_body_color" value="Gazebo/Orange"/>
     <xacro:property name="wheel_color" value="Gazebo/Black"/>
@@ -15,12 +15,12 @@
         <material>${chassis_color}</material>
     </gazebo>
 
-    <gazebo reference="bin_one">
-        <material>${bin_red}</material>
+    <gazebo reference="bin_red">
+        <material>${bin_one}</material>
     </gazebo>
 
-    <gazebo reference="bin_two">
-        <material>${bin_green}</material>
+    <gazebo reference="bin_green">
+        <material>${bin_two}</material>
     </gazebo>
 
     <gazebo reference = "left_upper_wheel">
@@ -35,7 +35,7 @@
         <material>${wheel_color}</material>
     </gazebo>
     
-    <gazebo reference = "right_botttom_wheel">
+    <gazebo reference = "right_bottom_wheel">
         <material>${wheel_color}</material>
     </gazebo>
 

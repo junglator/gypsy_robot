@@ -28,6 +28,10 @@ Visualization Manager:
       Topic: /camera_two_rgb_camera/image_raw
       Name: Image
       Enabled: true
+    - Class: rviz_default_plugins/PointCloud2
+      Topic: /laser
+      Name: PointCloud2
+      Enabled: true
   Global Options:
     Fixed Frame: base_footprint
     Frame Rate: 30

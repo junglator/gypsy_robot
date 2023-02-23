@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+                    <!--Properties-->
+
+    <xacro:property name="default_initial_positions_file" value="$(find gypsy_robot)/config/initial_panda_joint_positions.yaml"/>
+
+                    
+                    <!--Panda Arm control-->
+
+    <ros2_control name="panda_arm_system" type = "system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="panda_joint1">
+            <param name="initial_position">0.0</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint2">
+            <param name="initial_position">-0.7853981633974483</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint3">
+            <param name="initial_position">0.0</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint4">
+            <param name="initial_position">-2.356194490192345</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint5">
+            <param name="initial_position">0.0</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint6">
+            <param name="initial_position">1.5707963267948966</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="panda_joint7">
+            <param name="initial_position">0.7853981633974483</param>
+            <command_interface name="effort"/>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="effort"/>
+        </joint>
+    </ros2_control>
+
+                    <!--Gripper control-->
+
+    <ros2_control name="panda_gripper_system" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="finger_joint1">
+            <param name="initial_position">0.0</param>
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="finger_joint2">
+            <param name="initial_position">0.0</param>
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+    </ros2_control>
+
+                    <!--Mobile bot control-->
+    
+    <ros2_control name="mobile_bot_system" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="front_left_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+        <joint name="front_right_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+        <joint name="rear_left_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+        <joint name="rear_right_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+    </ros2_control>
+
+                    <!--Pulgin setup-->
+
+    <gazebo>
+        <plugin filename = "libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find gypsy_robot)/config/panda_controller.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename = "libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find gypsy_robot)/config/mobile_bot_controller.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+
+</robot>

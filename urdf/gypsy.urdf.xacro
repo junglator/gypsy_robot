@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<robot name="gypsy" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name ="PI" value="3.1415926535897931"/>
+
+    <xacro:include filename="$(find gypsy_robot)/urdf/panda.xacro"/>
+    
+    <xacro:include filename="$(find gypsy_robot)/urdf/gypsy_mobile.urdf.xacro"/>
+    
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/panda.gazebo"/>
+
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/mobile_bot.gazebo"/>
+    
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/material.gazebo"/>
+
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/plugin.gazebo"/>
+
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gazebo_description/physics.gazebo"/>
+
+    <xacro:include filename ="$(find gypsy_robot)/urdf/gypsy.ros2_control"/>
+    <!--########################################################################################-->
+    <link name = "base_footprint"></link>
+
+    <joint name="base_link_joint" type="fixed">
+        <origin xyz="0 0 0.15" rpy="0 0 ${PI/2}"/>
+        <parent link= "base_footprint"/>
+        <child link = "chassis"/>
+        <axis xyz="0 0 0"/>
+    </joint>
+
+    <joint name= "arm_joint" type="fixed">
+        <origin xyz="0 0.3 0.1325" rpy="0 0 ${PI/2}"/>
+        <parent link = "chassis"/>
+        <child link = "panda_link0"/>
+    </joint>
+
+    <joint name= "arm_camera_joint" type="fixed">
+        <origin xyz="0.04 -0.032 0.03" rpy="0 0 ${PI/4}"/>
+        <parent link = "panda_link8"/>
+        <child link = "camera_two"/>
+        <axis xyz = "1 0 0"/>
+    </joint>
+
+</robot>

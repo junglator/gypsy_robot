@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<robot name="gypsy" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+                    <!--Panda Arm transmission-->
+
+    <gazebo reference="panda_joint1">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <transmission name="panda_joint1_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint2">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint2_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint2_motor">
+            <hardwareInterface>hardware_interface/EffortJo  intInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint3">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint3_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>        
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint4">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint4_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint5">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint5_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint6">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint6_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint6_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo reference="panda_joint7">
+        <!-- Needed for ODE to output external wrenches on joints -->
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+    
+    <transmission name="panda_joint7_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="panda_joint7">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="panda_joint7_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <transmission name="panda_leftfinger_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="leftfinger_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>    
+    </transmission>
+
+    <transmission name="panda_rightfinger_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="rightfinger_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>   
+    </transmission>
+     
+</robot>  
